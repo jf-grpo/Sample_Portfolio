@@ -5,3 +5,7 @@ This is my professional portfolio
 
 Git and github
 SSH
+HTML
+CSS
+Font Awesome
+Google Fonts
