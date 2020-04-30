@@ -16,7 +16,7 @@ def lambda_handler(event, context):
         build_bucket = s3.Bucket('portfoliobuild.jftestzone.org')
         
         portfolio_zip = io.BytesIO()
-        build_bucket.download_fileobj('portfoliobuild.zip', portfolio_zip)
+        build_bucket.download_fileobj('portfoliobuild2.zip', portfolio_zip)
         
         with zipfile.ZipFile(portfolio_zip) as myzip:
             for nm in myzip.namelist():
