@@ -22,7 +22,7 @@ def lambda_handler(event, context):
                     
         print("Building portfolio from " + str(location))
         
-        s3 = boto3.resource('s3', config=Config(signature_version='s3v4'))
+        s3 = boto3.resource('s3')
         
         portfolio_bucket = s3.Bucket('portfolio.jftestzone.org')
         build_bucket = s3.Bucket(location["bucketName"])
@@ -45,6 +45,8 @@ def lambda_handler(event, context):
     except:
         topic.publish(Subject="Your Portfolio", Message="Portfolio did no deploy successfully.")
         raise
+
+    print('Job Done!')
     
-        return 'Hello from Lambda'
+    return 'Hello from Lambda'
     
